@@ -3,12 +3,6 @@ package chemistry;
 /*
 To do:
 
-- In the MiniCompound class, use enum for the state of matter
-	- add constructors to be able to take a state
-	- make a method to catch the "(aq)" etc. on the end of the string
-
-- CompoundSeries class should have a method to determine the products
-
 - In the Reaction class, have a method check which elements to switch in the replacement reaction
 
  */

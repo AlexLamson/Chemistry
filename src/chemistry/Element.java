@@ -4,7 +4,6 @@ package chemistry;
 
 To do:
 
-use the methods created in the Test class
 remove all methods that do the same thing with different arguments (do the same with the minimum amount of info)
 
 prefer methods like Element.isDiatomic(new Element("He2").protons) over new Element("He2").isDiatomic()
@@ -25,7 +24,7 @@ public class Element implements Comparable<Element>
 	public static final int[] eActivitySeries = {1, 3, 9, 11, 12, 13, 17, 19, 20, 24, 26, 28, 29, 30, 35, 47, 50, 53, 78, 79, 80, 82};
 	
 	public static final int[][] periodicTable = {
-	{1,   0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  2}, 					//yep, two hydrogens
+	{1,   0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  2}, 					//hydrogren can act in 2 ways, so there are 2 in the array
 	{3,   4,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  5,  6,  7,  8,  9, 10}, 
 	{11, 12,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 13, 14, 15, 16, 17, 18},
 	{19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36},
@@ -42,10 +41,9 @@ public class Element implements Comparable<Element>
 	
 	public static void main(String[] args)
 	{
-//		System.out.println(new Element("Helium2"));
+		System.out.println(new Element("Oxygen2").properties());
 //		System.out.println(new Element("zinc").isHigherOnActivitySeries(new Element("iron")));
-		
-		System.out.println(new Element("He2{2-}"));
+//		System.out.println(new Element("He2{2-}"));
 		
 //		makeTable();
 	}
@@ -82,8 +80,7 @@ public class Element implements Comparable<Element>
 				breakPos = i+1;
 		}
 		
-		//and return the letters found
-		return str.substring(0, breakPos);
+		return str.substring(0, breakPos);	//return the letters found
 	}
 	
 	public int getProtons(String str)
@@ -105,7 +102,7 @@ public class Element implements Comparable<Element>
 		int lettersLength = getLetters(str).length();
 		
 		if(str.length() == lettersLength)		//if the string is too short for a quantity
-			return 1;							//default to 1
+			return 1;							//default quantity is 1
 		
 		if(Character.isDigit(str.charAt(lettersLength)))	//if there are numbers after the letters
 		{
@@ -123,8 +120,7 @@ public class Element implements Comparable<Element>
 					breakPos = i+1;
 			}
 			
-			//and return the numbers found
-			return Integer.parseInt(str.substring(lettersLength, breakPos));
+			return Integer.parseInt(str.substring(lettersLength, breakPos));	//return the numbers found
 		}
 		
 		return 1;
@@ -212,7 +208,7 @@ public class Element implements Comparable<Element>
 			if(Character.isDigit(str.charAt(bracketPos+1)))	//if there are numbers
 			{
 				int breakPos = 0;
-				for(int i = bracketPos+1; i < str.length(); i++)		//get all of the numbers
+				for(int i = bracketPos+1; i < str.length(); i++)	//get all of the numbers
 				{
 					char ch = str.charAt(i);
 					if(!Character.isDigit(ch))
@@ -222,8 +218,7 @@ public class Element implements Comparable<Element>
 					}
 				}
 				
-				//set charge to numbers found
-				charge = Integer.parseInt(str.substring(bracketPos+1, breakPos));
+				charge = Integer.parseInt(str.substring(bracketPos+1, breakPos));	//set charge to numbers found
 			}
 			if(str.charAt(str.length()-2) == '-')	//if a negative sign is found
 				charge *= -1;						//make charge negative
@@ -236,7 +231,7 @@ public class Element implements Comparable<Element>
 		{
 			if(!isCharged())
 			{
-				System.err.println("getCharge - This element's charge is weird!");
+				System.err.println("getCharge - This element's charge is weird! ("+eSymbol[protons]+" with charge of "+charge+")");
 				return 0;
 			}
 			

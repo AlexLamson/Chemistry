@@ -3,6 +3,15 @@ package chemistry;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/*
+To do:
+
+- In the MiniCompound class, use enum for the state of matter
+	- add constructors to be able to take a state
+	- make a method to catch the "(aq)" etc. on the end of the string
+
+ */
+
 public class MiniCompound
 {
 	public static String[] gases = {"H2", "N2", "O2", "F2", "Cl2", "CO2", "SO2"};

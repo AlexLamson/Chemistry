@@ -1,5 +1,12 @@
 package chemistry;
 
+/*
+To do:
+
+- CompoundSeries class should have a method to determine the products
+
+ */
+
 //example: H2O + CO2
 public class CompoundSeries
 {
@@ -7,7 +14,7 @@ public class CompoundSeries
 	
 	public static void main(String[] args)
 	{
-//		CompoundSeries fell = new CompoundSeries("H2O + CO2");
+//		CompoundSeries test = new CompoundSeries("H2O + CO2");
 //		System.out.println(new CompoundSeries("H2O+CO2"));
 //		System.out.println(new CompoundSeries("C(OH) + CO2"));
 		System.out.println(new CompoundSeries("Calcium + Phosphorus"));
@@ -37,7 +44,6 @@ public class CompoundSeries
 				for(int i = 0; i < strArray.length; i++)
 					compounds[i] = new Compound(strArray[i]);
 				
-//				System.out.println("nopage");
 //				for(int i = 0; i < compounds.length; i++)
 //					System.out.print(compounds[i]);
 				

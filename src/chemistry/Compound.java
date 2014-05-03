@@ -12,7 +12,7 @@ public class Compound
 	{
 //		System.out.println(new Compound("2Co2(SO4)2(NH4)3"));
 //		System.out.println(new Compound("2Mn2(SO4)5"));
-		System.out.println(new Compound("2Co2(SO4)"));
+//		System.out.println(new Compound("2Co2(SO4)"));
 		System.out.println(new Compound("2CO2(SO4)2(Ne4)3"));
 //		System.out.println(new Compound("C"));
 	}
